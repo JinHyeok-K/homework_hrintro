@@ -1,6 +1,6 @@
-package domain.board;
+package intro.domain.board;
 
-import domain.name.NameEntity;
+
 import lombok.*;
 
 import javax.persistence.*;
@@ -10,6 +10,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@ToString
 @Table(name="info_table")
 public class BoardEntity {
 
@@ -17,13 +18,12 @@ public class BoardEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int bno;
-    private String address;
-    private String academy;
-    private String major;
+
+    private String bname;
+    private String baddress;
+    private String bacademy;
+    private String bmajor;
 
 
-    @ManyToOne
-    @JoinColumn(name = "name_no")
-    private NameEntity nameEntity;
 
 }
